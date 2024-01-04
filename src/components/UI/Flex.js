@@ -8,11 +8,12 @@ const SFlex = styled.div`
   flex-grow: ${(props) => (props.size ? props.size : 1)};
   align-items: ${(props) => (props.align ? props.align : 'inherit')};
   justify-content: ${(props) => (props.justify ? props.justify : 'inherit')};
+  gap: ${(props) => props.gap}px;
 `;
 
-const Flex = ({ children, direction, color, size, align, justify }) => {
+const Flex = ({ children, direction, color, size, align, justify, gap }) => {
   return (
-    <SFlex direction={direction} color={color} size={size} align={align} justify={justify}>
+    <SFlex direction={direction} color={color} size={size} align={align} justify={justify} gap={gap}>
       {children}
     </SFlex>
   );
