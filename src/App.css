@@ -13,6 +13,16 @@
   }
 }
 
+@font-face {
+  font-family: 'Karla';
+  src: url('assets/fonts/Karla.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Markiza Text';
+  src: url('assets/fonts/Markiza.ttf') format('truetype');
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

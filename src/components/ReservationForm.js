@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Button from './UI/Button';
 import styled from 'styled-components';
 import { colors } from './UI/styles';
-import flex from './UI/Flex';
 
 const Sinput = styled.input`
   height: 20px;

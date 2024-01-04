@@ -14,7 +14,7 @@ export const colors = {
 export const fonts = {
   display_title: css`
     font-family:
-      Markazi Text,
+      Markiza Text,
       serif;
     font-size: 65px;
     font-style: normal;
@@ -23,7 +23,7 @@ export const fonts = {
   `,
   subtitle: css`
     font-family:
-      Markazi Text,
+      Markiza Text,
       serif;
     font-size: 40px;
     font-style: normal;
