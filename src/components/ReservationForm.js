@@ -1,12 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import Button from './UI/Button';
 import styled from 'styled-components';
+import { colors } from './UI/styles';
+import flex from './UI/Flex';
 
 const Sinput = styled.input`
+  height: 20px;
+  border: solid 2px ${colors.primary_green};
+  border-radius: 20px;
+  padding: 0 5px 0 5px;
   border-color: ${(props) => (props.invalid ? 'red' : 'inherit')};
+
+  &:focus {
+    outline-color: ${colors.primary_yellow};
+  }
 `;
 const Sselect = styled.select`
+  height: 25px;
+  border: solid 2px ${colors.primary_green};
+  border-radius: 20px;
+  padding: 0 5px 0 5px;
   border-color: ${(props) => (props.invalid ? 'red' : 'inherit')};
+
+  &:focus {
+    outline-color: ${colors.primary_yellow};
+  }
 `;
 
 const ReservationForm = ({ reservations, addReservation }) => {
@@ -43,10 +61,7 @@ const ReservationForm = ({ reservations, addReservation }) => {
   }, [reservationData.date.value]);
 
   return (
-    <form
-      style={{ display: 'grid', minWidth: '150px', maxWidth: '200px', gap: '20px' }}
-      onSubmit={(e) => handleSubmit(e)}
-    >
+    <form style={{ display: 'flex', flexDirection: 'column', gap: '10px' }} onSubmit={(e) => handleSubmit(e)}>
       <label htmlFor="res-date">Choose date</label>
       <Sinput
         invalid={reservationData.date.touched && !reservationData.date.valid}
@@ -136,7 +151,7 @@ const ReservationForm = ({ reservations, addReservation }) => {
         }}
       />
       <label htmlFor="occasion">Occasion</label>
-      <select
+      <Sselect
         id="occasion"
         value={reservationData.occasion.value}
         onChange={(e) =>
@@ -152,8 +167,8 @@ const ReservationForm = ({ reservations, addReservation }) => {
         onBlur={() => {
           setReservationData({
             ...reservationData,
-            date: {
-              ...reservationData.date,
+            occasion: {
+              ...reservationData.occasion,
               touched: true,
             },
           });
@@ -161,7 +176,7 @@ const ReservationForm = ({ reservations, addReservation }) => {
       >
         <option>Birthday</option>
         <option>Anniversary</option>
-      </select>
+      </Sselect>
       <Button aria-label="On Click" type={'submit'} disabled={Object.values(reservationData).some((d) => !d.valid)}>
         Book now
       </Button>

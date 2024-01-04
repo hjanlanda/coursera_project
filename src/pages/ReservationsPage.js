@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Flex from '../components/UI/Flex';
 import ReservationForm from '../components/ReservationForm';
 import PageHeader from '../components/PageHeader';
+import MarginBox from '../components/UI/MarginBox';
 
 const ReservationsPage = () => {
   const [reservations, setReservations] = useState([]);
@@ -14,6 +15,7 @@ const ReservationsPage = () => {
         title={'Reservations'}
         description={'Here you can reserve your table for your dinners, dates, meetings..'}
       />
+      <MarginBox mt={30} />
       <Flex direction={'column'} align={'center'}>
         <ReservationForm reservations={reservations} addReservation={addReservation} />
       </Flex>
