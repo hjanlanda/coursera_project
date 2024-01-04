@@ -10,14 +10,22 @@ const Navigation = styled.nav`
   align-items: center;
   padding: 0 15px 0 15px;
 
-  li {
-    display: inline-flex;
-    margin: 0 5px 0 5px;
-    list-style-type: none;
+  ul {
+    height: 100%;
+    padding-top: 25px;
+  }
+`;
 
-    a {
-      text-decoration: none;
-    }
+const Sli = styled.li`
+  display: inline-flex;
+  margin: 0 5px 0 5px;
+  height: 100%;
+  list-style-type: none;
+  background-color: ${(props) => (props.active ? colors.primary_green : 'inherit')};
+  padding: 0 5px 0 5px;
+
+  a {
+    text-decoration: none;
   }
 `;
 
@@ -25,10 +33,6 @@ const Nav = () => {
   const menuItems = [
     {
       label: 'Homepage',
-      link: '/',
-    },
-    {
-      label: 'About us',
       link: '/',
     },
     {
@@ -49,18 +53,22 @@ const Nav = () => {
     },
   ];
 
+  const getIsActive = (link) => {
+    return window.location.pathname === link;
+  };
+
   return (
     <Navigation>
       <Logo />
       <ul>
         {menuItems.map((item, index) => (
-          <li key={item.label + index}>
+          <Sli key={item.label + index} active={getIsActive(item.link)}>
             <a href={item.link}>
-              <Text type={fonts.section_title} color={colors.primary_green}>
+              <Text type={fonts.section_title} color={getIsActive(item.link) ? colors.white : colors.primary_green}>
                 {item.label}
               </Text>
             </a>
-          </li>
+          </Sli>
         ))}
       </ul>
     </Navigation>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Button from './UI/Button';
-import Text from './UI/Text';
 import styled from 'styled-components';
 
 const Sinput = styled.input`
@@ -163,7 +162,7 @@ const ReservationForm = ({ reservations, addReservation }) => {
         <option>Birthday</option>
         <option>Anniversary</option>
       </select>
-      <Button type={'submit'} disabled={Object.values(reservationData).some((d) => !d.valid)}>
+      <Button aria-label="On Click" type={'submit'} disabled={Object.values(reservationData).some((d) => !d.valid)}>
         Book now
       </Button>
     </form>
