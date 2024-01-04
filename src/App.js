@@ -3,7 +3,7 @@ import Nav from './components/sections/Nav';
 import HomePage from './pages/HomePage';
 import Footer from './components/sections/Footer';
 import styled from 'styled-components';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MenuPage from './pages/MenuPage';
 import ReservationsPage from './pages/ReservationsPage';
