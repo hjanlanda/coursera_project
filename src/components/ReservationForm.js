@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Button from './UI/Button';
 import styled from 'styled-components';
 import { colors } from './UI/styles';
+import MarginBox from './UI/MarginBox';
 
 const Sinput = styled.input`
   height: 20px;
@@ -176,6 +177,7 @@ const ReservationForm = ({ reservations, addReservation }) => {
         <option>Birthday</option>
         <option>Anniversary</option>
       </Sselect>
+      <MarginBox mt={50} />
       <Button aria-label="On Click" type={'submit'} disabled={Object.values(reservationData).some((d) => !d.valid)}>
         Book now
       </Button>
