@@ -23,6 +23,8 @@ const Sli = styled.li`
   list-style-type: none;
   background-color: ${(props) => (props.active ? colors.primary_green : 'inherit')};
   padding: 0 5px 0 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 
   a {
     text-decoration: none;
