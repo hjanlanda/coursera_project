@@ -1,14 +1,21 @@
 import React from 'react';
-import Flex from './Flex';
-import Text from './Text';
-import MarginBox from './MarginBox';
-import { colors, fonts } from '../styles';
-import Box from './Box';
+import Flex from './UI/Flex';
+import Text from './UI/Text';
+import MarginBox from './UI/MarginBox';
+import { colors, fonts } from './UI/styles';
+import styled from 'styled-components';
+
+const SCard = styled.div`
+  width: 300px;
+  background-color: ${colors.secondary_grey};
+  border-radius: 15px;
+  box-shadow: 0 0 10px grey;
+`;
 
 const SpecialsCard = ({ title, description, price, img }) => {
   return (
-    <Box width={300} color={colors.secondary_grey}>
-      <img alt={title} src={img} width={300} height={200} />
+    <SCard>
+      <img alt={title} src={img} width={300} height={200} style={{ borderRadius: '15px' }} />
       <MarginBox mt={15} ml={15} mr={15} mb={15}>
         <Flex direction={'column'}>
           <Flex>
@@ -27,7 +34,7 @@ const SpecialsCard = ({ title, description, price, img }) => {
           </Flex>
         </Flex>
       </MarginBox>
-    </Box>
+    </SCard>
   );
 };
 

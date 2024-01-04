@@ -1,19 +1,26 @@
 import React from 'react';
-import MarginBox from './MarginBox';
-import Text from './Text';
-import { fonts } from '../styles';
-import Flex from './Flex';
-import Button from './Button';
-import SpecialsCard from './SpecialsCard';
+import MarginBox from '../UI/MarginBox';
+import Text from '../UI/Text';
+import { fonts } from '../UI/styles';
+import Flex from '../UI/Flex';
+import Button from '../UI/Button';
+import SpecialsCard from '../SpecialsCard';
 import styled from 'styled-components';
-import bruchetta from '../assets/bruchetta.svg';
-import salad from '../assets/greek_salad.jpg';
-import desert from '../assets/lemon_dessert.jpg';
+import bruchetta from '../../assets/bruchetta.svg';
+import salad from '../../assets/greek_salad.jpg';
+import desert from '../../assets/lemon_dessert.jpg';
+import Box from '../UI/Box';
 
 const SpecialsContainer = styled.div`
   display: grid;
-  gap: 30px;
-  grid-template-columns: 300px 300px 300px;
+  gap: 1rem;
+
+  @media (min-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 1000px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 const Specials = () => {
@@ -45,28 +52,36 @@ const Specials = () => {
   ];
 
   return (
-    <MarginBox ml={250} mr={250}>
+    <Box>
       <Flex>
+        <Flex />
         <Text type={fonts.display_title}>This weeks specials</Text>
         <Flex direction={'row-reverse'} align={'center'}>
           <Button>Online menu</Button>
         </Flex>
+        <Flex />
       </Flex>
       <MarginBox mt={30} />
-      <SpecialsContainer>
-        {specials.map((special) => {
-          return (
-            <SpecialsCard
-              key={special.key}
-              title={special.title}
-              description={special.description}
-              img={special.img}
-              price={special.price}
-            />
-          );
-        })}
-      </SpecialsContainer>
-    </MarginBox>
+      <Flex>
+        <Flex />
+        <Flex size={5} justify={'center'}>
+          <SpecialsContainer>
+            {specials.map((special) => {
+              return (
+                <SpecialsCard
+                  key={special.key}
+                  title={special.title}
+                  description={special.description}
+                  img={special.img}
+                  price={special.price}
+                />
+              );
+            })}
+          </SpecialsContainer>
+        </Flex>
+        <Flex />
+      </Flex>
+    </Box>
   );
 };
 

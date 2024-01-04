@@ -1,18 +1,23 @@
 import React from 'react';
-import Flex from './Flex';
-import { colors, fonts } from '../styles';
-import MarginBox from './MarginBox';
-import Text from './Text';
-import Box from './Box';
-import Button from './Button';
-import RestaurantFood from '../assets/restauranfood.jpg';
+import Flex from '../UI/Flex';
+import { colors, fonts } from '../UI/styles';
+import MarginBox from '../UI/MarginBox';
+import Text from '../UI/Text';
+import Box from '../UI/Box';
+import Button from '../UI/Button';
+import RestaurantFood from '../../assets/restauranfood.jpg';
 import styled from 'styled-components';
 
 const Simg = styled.img`
-  position: absolute;
-  right: 250px;
   margin-top: 50px;
   border-radius: 25px;
+  width: 180px;
+
+  @media (min-width: 1200px) {
+    position: absolute;
+    right: 250px;
+    width: 300px;
+  }
 `;
 
 const CallToAction = () => {

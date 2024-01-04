@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Text from './Text';
-import { colors, fonts } from '../styles';
-import { ReactComponent as Logo } from '../assets/Logo.svg';
+import Text from '../UI/Text';
+import { colors, fonts } from '../UI/styles';
+import { ReactComponent as Logo } from '../../assets/Logo.svg';
 
 const Navigation = styled.nav`
   height: 50px;
